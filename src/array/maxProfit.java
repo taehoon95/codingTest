@@ -1,3 +1,5 @@
+package array;
+
 public class maxProfit {
 
     public static void main(String[] args) {

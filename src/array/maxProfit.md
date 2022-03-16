@@ -26,32 +26,32 @@
 7. 1에서 5를 뺀값 4와 6(기존의값)을 비교한다. 
 
 - 작은 값 저장 할 변수 필요하다. min
-- Math.max 를 이용해서 max 값을 가지고 있으면서 비교할 수 있도록 해야한다. max 
+- Math.max 를 이용해서 max 값을 가지고 있으면서 비교할 수 있도록 해야한다. max
 
 ```java
 public class maxProfit {
 
     public static void main(String[] args) {
         int[] prices = {8, 2, 6, 5, 1, 7, 5};
-        maxProfit mp = new maxProfit();
+        array.maxProfit mp = new array.maxProfit();
         System.out.println(mp.maxP(prices));
     }
 
-    public int maxP(int[] nums){
+    public int maxP(int[] nums) {
         int min = nums[0];
         int max = 0;
 
         // 1. nums 의 길이가 0 이면 0 리턴
-        if(nums.length == 0){
+        if (nums.length == 0) {
             return 0;
         }
 
         // 2.if문 에서 작은 값이 생기면 세팅
         //   else문 에서 nums[i]로 넘어오는 값은 min의 값보다 크다는 뜻이므로 max 값을 계속 비교해서 결국에는 가장 큰 값을 리턴 하게 된다.
-        for(int i = 0; i < nums.length; i++){
-            if(min > nums[i]){
+        for (int i = 0; i < nums.length; i++) {
+            if (min > nums[i]) {
                 min = nums[i];
-            }else{
+            } else {
                 max = Math.max(max, nums[i] - min);
             }
         }
